@@ -1,0 +1,159 @@
+
+.skills {
+  position: relative;
+  z-index: 5;
+  background-color: #1c1c1c;
+  padding: 4rem 2rem;
+  color: rgb(255, 255, 255);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.skills-title {
+  background-color: #1c1c1c;
+  position: sticky;
+  top: 0;
+  font-size: 4rem;
+  font-weight: 600;
+  padding-top: 2%;
+  margin: 3%;
+  padding-bottom: 2%;
+  margin-bottom: 5%;
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.skills-title.slide-in {
+  animation: slideInFromRight 1s ease-out forwards;
+}
+
+.skills li {
+  list-style: none;
+  font-size: 3rem;
+  padding: 0.5rem 0;
+  display: flex;
+  gap: 1rem;
+}
+
+
+.techstack {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 2rem;
+  align-items: center;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.bento-box {
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover glow */
+.bento-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.2),
+              0 0 24px rgba(0, 255, 255, 0.15);
+}
+
+/* Title */
+.bento-box h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+/* Inner grid for 2-column icon groups */
+.bento-split {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* All icon list styles */
+.bento-box ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+/* Icon size */
+.bento-box li {
+  font-size: 2rem;
+}
+
+.bento-box ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.bento-box li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  transition: background 0.3s ease;
+}
+
+.bento-box li:hover {
+  background: rgba(0, 255, 255, 0.1);
+}
+
+.bento-box li i {
+  font-size: 1.8rem;
+}
+
+.bento-box li span {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-areas:
+    "languages languages languages"
+    "frameworks databases tools";
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+/* Assign areas */
+.bento-box:nth-child(1) {
+  grid-area: languages;
+}
+.bento-box:nth-child(2) {
+  grid-area: frameworks;
+}
+.bento-box:nth-child(3) {
+  grid-area: databases;
+}
+.bento-box:nth-child(4) {
+  grid-area: tools;
+}
