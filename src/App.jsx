@@ -9,7 +9,7 @@ export const App = () => {
       <Background />
       <About />
       <Projects />
-      <Skills /> 
+      <Skills />
     </Fragment>
   );
 };

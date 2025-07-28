@@ -1,29 +1,42 @@
-
+/* =========================
+  Container Styles
+  ========================= */
 .skills {
   position: relative;
   z-index: 5;
-  background-color: #1c1c1c;
-  padding: 4rem 2rem;
-  color: rgb(255, 255, 255);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+.skills-2 {
+  width: 100%;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* =========================
+  Title Styles
+  ========================= */
 .skills-title {
-  background-color: #1c1c1c;
+  background-color: #ffffff;
   position: sticky;
   top: 0;
+  z-index: 10;
   font-size: 4rem;
   font-weight: 600;
   padding-top: 2%;
-  margin: 3%;
   padding-bottom: 2%;
-  margin-bottom: 5%;
+  margin: 3%;
   opacity: 0;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
   transform: translateX(100%);
 }
 
@@ -31,6 +44,9 @@
   animation: slideInFromRight 1s ease-out forwards;
 }
 
+/* =========================
+  List Styles
+  ========================= */
 .skills li {
   list-style: none;
   font-size: 3rem;
@@ -39,15 +55,9 @@
   gap: 1rem;
 }
 
-
-.techstack {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  gap: 2rem;
-  align-items: center;
-}
-
+/* =========================
+  Bento Grid & Box Styles
+  ========================= */
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -55,39 +65,52 @@
   padding: 2rem;
 }
 
-.bento-box {
-  background: #111;
+.bento-box,
+.bento-box-2 {
+  background: #fdff5d;
   border: 1px solid #333;
-  border-radius: 16px;
-  padding: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: white;
+  color: black;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bento-box {
+  padding: 1.5rem;
   overflow: hidden;
+  height: 80%;
+  width: 100%;
+
 }
 
-/* Hover glow */
-.bento-box:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 12px rgba(0, 255, 255, 0.2),
-              0 0 24px rgba(0, 255, 255, 0.15);
+.bento-box-2 {
+  padding: 1.5rem;
+  height: 80%;
+  width: 100%;
+  margin: 3%;
 }
 
-/* Title */
+/* =========================
+  Bento Box Content Styles
+  ========================= */
 .bento-box h3 {
   font-size: 1.3rem;
   margin-bottom: 1rem;
 }
 
-/* Inner grid for 2-column icon groups */
 .bento-split {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
-/* All icon list styles */
-.bento-box ul {
+/* =========================
+  List & Icon Styles (Bento)
+  ========================= */
+.bento-box ul,
+.bento-box-2 ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -96,64 +119,32 @@
   margin: 0;
 }
 
-/* Icon size */
-.bento-box li {
-  font-size: 2rem;
-}
-
-.bento-box ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 0;
-  margin: 0;
-}
-
-.bento-box li {
+.bento-box li,
+.bento-box-2 li {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 0.4rem 0.8rem;
+  background: rgb(0, 0, 0);
+  padding: 1rem;
   border-radius: 0.5rem;
   transition: background 0.3s ease;
 }
 
-.bento-box li:hover {
-  background: rgba(0, 255, 255, 0.1);
+.bento-box li i,
+.bento-box-2 li i {
+  font-size: 3rem;
 }
 
-.bento-box li i {
-  font-size: 1.8rem;
-}
-
-.bento-box li span {
+.bento-box li span,
+.bento-box-2 li span {
   font-size: 1rem;
   color: #ddd;
 }
 
-.bento-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  grid-template-areas:
-    "languages languages languages"
-    "frameworks databases tools";
-  gap: 1.5rem;
-  padding: 2rem;
-}
-
-/* Assign areas */
-.bento-box:nth-child(1) {
-  grid-area: languages;
-}
-.bento-box:nth-child(2) {
-  grid-area: frameworks;
-}
-.bento-box:nth-child(3) {
-  grid-area: databases;
-}
-.bento-box:nth-child(4) {
-  grid-area: tools;
+/* =========================
+  Slider Container
+  ========================= */
+.slider-container {
+  background-color: #ffffff;
 }
