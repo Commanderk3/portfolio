@@ -20,6 +20,7 @@ body {
   width: 100%;
   z-index: 1;
   overflow: hidden;
+  transition: opacity 0.4s ease;
 }
 
 /* Scrolling glowing text */
@@ -102,10 +103,10 @@ body {
   position: relative;
   z-index: 5;
   /* Higher than background */
-  background-color: #ffffff;
+  background-color: #000000;
   padding: 4rem 2rem;
   /* Enough to scroll */
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 
@@ -118,10 +119,10 @@ body {
   position: relative;
   z-index: 5;
   /* Higher than background */
-  background-color: #1c1c1c;
+  background-color: #ffffff;
   padding: 4rem 2rem;
   /* Enough to scroll */
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 
@@ -131,7 +132,7 @@ body {
 }
 
 .projects-title {
-  background-color: #1c1c1c;
+  background-color: #ffffff;
   position: sticky;
   top: 0;
   font-size: 4rem;
@@ -141,7 +142,7 @@ body {
   padding-bottom: 2%;
   border-bottom-style: solid;
   border-bottom-width: 2px;
-  border-bottom-color: #fff;
+  border-bottom-color: #000000;
 }
 
 .projects-content {
@@ -163,15 +164,15 @@ body {
   height: 15vh;
   border-bottom-style: solid;
   border-bottom-width: 2px;
-  border-bottom-color: white;
+  border-bottom-color: rgb(0, 0, 0);
   /* Pointer on hover */
   transition: background 0.3s;
 
 }
 
 .project-list li:hover {
-  background-color: white;
-  color: #1c1c1c;
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
 }
 
 .project-names {
@@ -185,18 +186,38 @@ body {
 }
 
 .project-button {
-  background-color: #1c1c1c;
-  color: white;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
   border-style: solid;
   border-width: 2px;
-  border-color: white;
+  border-color: rgb(0, 0, 0);
   border-radius: 3px;
   padding: 2vh;
   cursor: pointer;
 }
 
+.hidden {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
 .project-button:last-child {
   margin-right: 0%;
+}
+
+/* styles.css */
+.slide-box {
+  position: absolute;
+  width: 50%;
+  height: 500px;
+  background-color: "white";
+  color: white;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease-out;
 }
 
 @keyframes slideInFromRight {
@@ -217,4 +238,3 @@ body {
     transform: translate(calc(-50% - 0.86rem));
   }
 }
-

@@ -2,16 +2,7 @@ export const About = () => {
   return (
     <div className="about">
       <div className="about-title">About</div>
-      <div className="about-content">
-        Lorem ipsum dolor sit amet... (repeat this a lot to test scrolling).
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum voluptatibus veritatis maxime necessitatibus perferendis magni eveniet, nobis molestiae cum commodi quas iste, numquam quasi. Repellat dignissimos facilis fuga quaerat officia.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed laudantium dicta illum sequi aliquam porro voluptas voluptate tempore rerum ullam, beatae commodi? Nulla, eaque! Ex quisquam alias harum iure quidem.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, eligendi eum quaerat unde doloribus itaque non aperiam possimus rerum sequi odit a, deleniti officiis nesciunt eaque repudiandae exercitationem vitae pariatur.
-        Lorem ipsum dolor sit amet... (repeat this a lot to test scrolling).
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum voluptatibus veritatis maxime necessitatibus perferendis magni eveniet, nobis molestiae cum commodi quas iste, numquam quasi. Repellat dignissimos facilis fuga quaerat officia.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum voluptatibus veritatis maxime necessitatibus perferendis magni eveniet, nobis molestiae cum commodi quas iste, numquam quasi. Repellat dignissimos facilis fuga quaerat officia.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed laudantium dicta illum sequi aliquam porro voluptas voluptate tempore rerum ullam, beatae commodi? Nulla, eaque! Ex quisquam alias harum iure quidem.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, eligendi eum quaerat unde doloribus itaque non aperiam possimus rerum sequi odit a, deleniti officiis nesciunt eaque repudiandae exercitationem vitae pariatur.
+      <div className="about-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos velit veniam placeat, ipsum ducimus quibusdam maiores veritatis sunt quae nam voluptas iusto suscipit iure labore quia enim provident cum laborum voluptates magnam illo quisquam officiis repellat. Excepturi aut alias recusandae nisi esse minus iure accusamus, eveniet deleniti totam harum odit quas? Necessitatibus itaque at doloribus molestias quaerat temporibus optio alias? Ipsum debitis reiciendis dolorem similique minus et beatae sint corporis suscipit, quibusdam aut veniam, exercitationem perspiciatis dolorum est voluptatum ab quos qui id rerum voluptate. Cupiditate minima provide ex, commodi iusto ducimus rem.
       </div>
     </div>
   );
