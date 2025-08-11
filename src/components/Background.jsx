@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 export const Background = () => {
 
@@ -7,7 +7,7 @@ export const Background = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      if (scrollY > 500) {
+      if (scrollY > 1000) {
         setHide(true);
       } else {
         setHide(false);

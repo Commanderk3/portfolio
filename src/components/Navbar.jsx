@@ -1,12 +1,14 @@
 export const Navbar = () => {
   return (
-    <nav className="navbar">
+    <div className="navbar_container">
+      <div className="logo"></div>
       <ul className="nav-links">
-        <li>about</li>
-        <li>expertise</li>
-        <li>experience</li>
-        <li>contact</li>
+        <li>About</li>
+        <li>Project</li>
+        <li>Expertise</li>
+        <li>Experience</li>
+        <li>Contact</li>
       </ul>
-    </nav>
+    </div>
   );
 };
