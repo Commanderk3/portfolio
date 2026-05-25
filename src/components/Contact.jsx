@@ -1,54 +1,78 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+
+const contactLinks = [
+  {
+    label: "Email",
+    value: "diwangshukakoty@gmail.com",
+    href: "mailto:diwangshukakoty@gmail.com",
+  },
+  { label: "Phone", value: "+91 9784237669", href: "tel:+919784237669" },
+  {
+    label: "GitHub",
+    value: "github.com/Commanderk3",
+    href: "https://github.com/Commanderk3",
+    external: true,
+  },
+  {
+    label: "LinkedIn",
+    value: "linkedin.com/in/diwangshu-kakoty",
+    href: "https://www.linkedin.com/in/diwangshu-kakoty/",
+    external: true,
+  },
+];
 
 export const Contact = () => {
-  const [time, setTime] = useState(0);
+  const [time, setTime] = useState("");
 
   useEffect(() => {
-    const TimeHandler = () => {
-      const now = new Date();
-      const localTime = now.toLocaleTimeString();
+    const updateTime = () => {
+      const localTime = new Date().toLocaleTimeString("en-IN", {
+        timeZone: "Asia/Kolkata",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+      });
       setTime(localTime);
     };
-    setInterval(() => {
-      TimeHandler();
-    }, 1000);
+
+    updateTime();
+    const timer = setInterval(updateTime, 1000);
+    return () => clearInterval(timer);
   }, []);
 
   return (
-    <div className="contact">
-      <div className="name-title">DIWANGSHU KAKOTY</div>
+    <section id="contact" className="contact">
+      <h2 className="name-title">DIWANGSHU KAKOTY</h2>
       <div className="contact-container">
         <div>
           <div className="time">
-            <span className="label">Local time —</span>
-            <span className="value">{time}</span>
+            <span className="label">Local time -</span>
+            <span className="value">{time} IST</span>
           </div>
-          <div className="endline">Made with love and React in Chennai, India</div>
+          <p className="endline">
+            Open to impactful software engineering roles, open-source
+            collaboration, and product-focused AI projects.
+          </p>
         </div>
 
         <div className="contact-content">
           <ul>
-            <li onClick={() => window.open("mailto:diwangshukakoty@gmail.com")}>
-              <span>Email</span>
-              <span className="arrow">↗</span>
-            </li>
-            <li onClick={() => window.open("https://github.com/Commanderk3")}>
-              <span>GitHub</span>
-              <span className="arrow">↗</span>
-            </li>
-          </ul>
-          <ul>
-            <li onClick={() => window.open("https://www.linkedin.com/in/diwangshu-kakoty/")}>
-              <span>LinkedIn</span>
-              <span className="arrow">↗</span>
-            </li>
-            <li>
-              <span>Twitter</span>
-              <span className="arrow">↗</span>
-            </li>
+            {contactLinks.map((link) => (
+              <li key={link.label}>
+                <a
+                  href={link.href}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noreferrer" : undefined}
+                >
+                  <span className="contact-label">{link.label}</span>
+                  <span className="contact-value">{link.value}</span>
+                  <span className="arrow">-&gt;</span>
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

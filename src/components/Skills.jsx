@@ -1,182 +1,74 @@
 import "../styles/skills.css";
-import { useEffect, useRef, useState } from "react";
+
+const skillGroups = [
+  {
+    title: "Languages",
+    className: "skill-card-yellow",
+    items: [
+      { label: "C", icon: "devicon-c-original colored" },
+      { label: "C++", icon: "devicon-cplusplus-plain colored" },
+      { label: "Java", icon: "devicon-java-plain colored" },
+      { label: "Python", icon: "devicon-python-plain colored" },
+      { label: "JavaScript", icon: "devicon-javascript-plain colored" },
+      { label: "TypeScript", icon: "devicon-typescript-plain colored" },
+    ],
+  },
+  {
+    title: "Frameworks / Tools",
+    className: "skill-card-red",
+    items: [
+      { label: "Spring Boot", icon: "devicon-spring-original colored" },
+      { label: "React", icon: "devicon-react-original colored" },
+      { label: "Node.js", icon: "devicon-nodejs-plain colored" },
+      { label: "Express", icon: "devicon-express-original" },
+      { label: "MongoDB", icon: "devicon-mongodb-plain colored" },
+      { label: "Django", icon: "devicon-django-plain" },
+      { label: "LangChain" },
+      { label: "FastAPI", icon: "devicon-fastapi-plain colored" },
+      { label: "Git", icon: "devicon-git-plain colored" },
+      { label: "GitHub", icon: "devicon-github-original" },
+      { label: "Docker", icon: "devicon-docker-plain colored" },
+      { label: "Kubernetes", icon: "devicon-kubernetes-plain colored" },
+      { label: "Terraform", icon: "devicon-terraform-plain colored" },
+      { label: "Ansible", icon: "devicon-ansible-plain colored" },
+    ],
+  },
+  {
+    title: "CS Fundamentals",
+    className: "skill-card-green",
+    items: [
+      { label: "Data Structures and Algorithms" },
+      { label: "DBMS" },
+      { label: "Operating Systems" },
+      { label: "Object-Oriented Programming" },
+      { label: "Computer Networks" },
+    ],
+  },
+];
 
 export const Skills = () => {
-  const skillsRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (skillsRef.current) {
-      observer.observe(skillsRef.current);
-    }
-
-    return () => {
-      if (skillsRef.current) {
-        observer.unobserve(skillsRef.current);
-      }
-    };
-  }, []);
-
   return (
-    <div className="skills" ref={skillsRef}>
-      <div className={`skills-title ${isVisible ? "slide-in" : ""}`}>
-        Expertise
-      </div>
-      <ScrollSlideIn />
-    </div>
-  );
-};
-
-const ScrollSlideIn = () => {
-  const slideRef = useRef(null);
-  const sectionRef = useRef(null);
-  const [translateX, setTranslateX] = useState(-100);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const section = sectionRef.current;
-      const slide = slideRef.current;
-      if (!section || !slide) return;
-
-      const rect = section.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      if (rect.top < windowHeight && rect.bottom > 0) {
-        const visibleHeight = windowHeight - rect.top;
-        const progress = Math.min(1, visibleHeight / rect.height);
-        const newTranslateX = -(1 - progress) * 100;
-        setTranslateX(newTranslateX);
-      } else {
-        setTranslateX(-100);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  return (
-    <>
-      <div className="slider-parent">
-        <div
-          className="slider-container"
-          ref={sectionRef}
-          style={{
-            backgroundColor: "white",
-            position: "relative",
-            display: "flex",
-          }}
-        >
-          <div
-            ref={slideRef}
-            className="slide-box"
-            style={{
-              transform: `translateX(${translateX}%)`,
-              left: "0",
-              zIndex: "3",
-            }}
-          >
-            <div
-              className="bento-box"
-              style={{ marginLeft: "6%", marginRight: "2%" }}
-            >
-              <h2>L A N G U A G E S</h2>
-              <div className="bento-split">
-                <ul>
-                  <li>
-                    <i class="devicon-html5-plain colored"></i>
-                  </li>
-                  <li>
-                    <i class="devicon-css3-plain colored"></i>
-                  </li>
-                  <li>
-                    <i class="devicon-javascript-plain colored"></i>
-                  </li>
-                  <li>
-                    <i class="devicon-c-original colored"></i>
-                  </li>
-                  <li>
-                    <i class="devicon-cplusplus-plain colored"></i>
-                  </li>
-                  <li>
-                    <i class="devicon-python-plain colored"></i>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div
-            style={{
-              width: "50%",
-              height: "500px",
-              zIndex: "2",
-              backgroundColor: "white",
-            }}
-          ></div>
-
-          <div
-            ref={slideRef}
-            className="slide-box"
-            style={{ transform: `translateX(${translateX}%)`, left: "50%" }}
-          >
-            <div
-              className="bento-box"
-              style={{
-                marginLeft: "2%",
-                marginRight: "6%",
-                backgroundColor: "#ff3e3e",
-              }}
-            >
-              <h2>F R A M E W O R K S</h2>
-              <ul className="framework">
-                <li>
-                  <i class="devicon-react-original colored"></i>
+    <section id="skills" className="skills">
+      <h2 className="skills-title">Skills</h2>
+      <p className="skills-intro">
+        A practical toolkit across systems programming, full-stack development,
+        cloud-native tooling, and computer science fundamentals.
+      </p>
+      <div className="skills-grid">
+        {skillGroups.map((group) => (
+          <article key={group.title} className={`skill-card ${group.className}`}>
+            <h3>{group.title}</h3>
+            <ul>
+              {group.items.map((item) => (
+                <li key={item.label}>
+                  {item.icon ? <i className={item.icon} aria-hidden="true" /> : null}
+                  <span>{item.label}</span>
                 </li>
-                <li>
-                  <i class="devicon-express-original"></i>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+              ))}
+            </ul>
+          </article>
+        ))}
       </div>
-      <div className="skills-2">
-        <div className="bento-box-2" style={{ backgroundColor: "#5b8f67" }}>
-          <h2>D A T A B A S E</h2>
-          <ul className="database">
-            <li>
-              <i class="devicon-mysql-original colored"></i>
-            </li>
-            <li>
-              <i class="devicon-mongodb-plain colored"></i>
-            </li>
-          </ul>
-        </div>
-        <div className="bento-box-2" style={{ backgroundColor: "#ffc1f5" }}>
-          <h2>T O O L S</h2>
-          <ul className="tools">
-            <li>
-              <i class="devicon-nodejs-plain colored"></i>
-            </li>
-            <li>
-              <i class="devicon-git-plain colored"></i>
-            </li>
-            <li>
-              <i class="devicon-github-original"></i>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </>
+    </section>
   );
 };

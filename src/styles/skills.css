@@ -1,150 +1,72 @@
-/* =========================
-  Container Styles
-  ========================= */
-.skills {
-  position: relative;
-  z-index: 5;
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.skills-intro {
+  margin: 1.2rem 0 1.6rem;
+  max-width: 72ch;
+  font-size: clamp(1rem, 2.1vw, 1.2rem);
+  line-height: 1.7;
 }
 
-.skills-2 {
-  width: 100%;
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
-  display: flex;
-  justify-content: space-between;
-}
-
-/* =========================
-  Title Styles
-  ========================= */
-.skills-title {
-  background-color: #ffffff;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  font-size: 4rem;
-  font-weight: 600;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  margin: 3%;
-  opacity: 0;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #000000;
-  transform: translateX(100%);
-}
-
-.skills-title.slide-in {
-  animation: slideInFromRight 1s ease-out forwards;
-}
-
-/* =========================
-  List Styles
-  ========================= */
-.skills li {
-  list-style: none;
-  font-size: 3rem;
-  padding: 0.5rem 0;
-  display: flex;
-  gap: 1rem;
-}
-
-/* =========================
-  Bento Grid & Box Styles
-  ========================= */
-.bento-grid {
+.skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem;
-}
-
-.bento-box,
-.bento-box-2 {
-  background: #fdff5d;
-  border: 1px solid #333;
-  color: black;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.bento-box {
-  padding: 1.5rem;
-  overflow: hidden;
-  height: 80%;
-  width: 100%;
-
-}
-
-.bento-box-2 {
-  padding: 1.5rem;
-  height: 80%;
-  width: 100%;
-  margin: 3%;
-}
-
-/* =========================
-  Bento Box Content Styles
-  ========================= */
-.bento-box h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-}
-
-.bento-split {
-  display: flex;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
-  flex-wrap: wrap;
 }
 
-/* =========================
-  List & Icon Styles (Bento)
-  ========================= */
-.bento-box ul,
-.bento-box-2 ul {
+.skill-card {
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: clamp(1rem, 2vw, 1.3rem);
+  min-height: 100%;
+}
+
+.skill-card h3 {
+  margin: 0 0 0.9rem;
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+}
+
+.skill-card ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  padding: 0;
-  margin: 0;
+  gap: 0.6rem;
 }
 
-.bento-box li,
-.bento-box-2 li {
-  display: flex;
+.skill-card li {
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.42rem 0.72rem;
+  background: #000;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.skill-card li i {
   font-size: 1rem;
-  background: rgb(0, 0, 0);
-  padding: 1rem;
-  border-radius: 0.5rem;
-  transition: background 0.3s ease;
 }
 
-.bento-box li i,
-.bento-box-2 li i {
-  font-size: 3rem;
+.skill-card-yellow {
+  background-color: #fdff5d;
 }
 
-.bento-box li span,
-.bento-box-2 li span {
-  font-size: 1rem;
-  color: #ddd;
+.skill-card-red {
+  background-color: #ffb3b3;
 }
 
-/* =========================
-  Slider Container
-  ========================= */
-.slider-container {
-  background-color: #ffffff;
+.skill-card-green {
+  background-color: #b5d7be;
+}
+
+@media (max-width: 980px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
 }

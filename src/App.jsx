@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Background } from "./components/Background"
 import { About } from "./components/About"
+import { Education } from "./components/Education"
 import { Projects } from "./components/Projects"
 import { Skills } from "./components/Skills"
 import { Experience } from "./components/Experience"
@@ -12,9 +13,10 @@ export const App = () => {
       <Background />
       <Navbar />
       <About />
+      <Education />
+      <Experience />
       <Projects />
       <Skills />
-      <Experience />
       <Contact />
     </Fragment>
   );

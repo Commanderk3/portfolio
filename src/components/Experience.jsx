@@ -1,16 +1,39 @@
+const experienceItems = [
+  {
+    title: "Google Summer of Code 2025 - Contributor (Sugar Labs)",
+    duration: "June 2025 - August 2025",
+    description:
+      "Built AI mentor agents using a RAG pipeline with FastAPI and JavaScript, deployed on AWS to support 1,000+ active students in the Sugar Labs ecosystem.",
+  },
+  {
+    title: "Google Summer of Code 2026 - Mentor (Sugar Labs)",
+    duration: "Ongoing",
+    description:
+      "Guiding contributors on project planning, architecture decisions, and code reviews for next-generation open-source projects.",
+  },
+  {
+    title: "Open Source Contributions - Music Blocks",
+    duration: "Community Contributions",
+    description:
+      "Authored 150+ Jest test cases, fixed 10+ critical bugs, and shipped 5+ features across the Music Blocks codebase.",
+  },
+];
+
 export const Experience = () => {
   return (
-    <div className="experience">
-      <div className="experience-title">Experience</div>
+    <section id="experience" className="experience">
+      <h2 className="experience-title">Experience</h2>
       <div className="experience-content">
-        I have been actively involved in open-source projects, contributing to meaningful enhancements and gaining 
-        valuable experience through collaborative development. I am an active contributor and member of SugarLabs, 
-        an open-source organization dedicated to creating educational software and tools for children worldwide. 
-        As a Google Summer of Code (GSoC) mentee, I had the opportunity to work closely with experienced mentors and 
-        the community, which helped me improve my coding skills, deepen my understanding of best practices, 
-        and embrace the collaborative spirit of open-source work. My primary experience lies in building AI application,
-        Full Stack Web application and debugging.
+        <div className="experience-list">
+          {experienceItems.map((item) => (
+            <article key={item.title} className="experience-item">
+              <h3>{item.title}</h3>
+              <p className="experience-duration">{item.duration}</p>
+              <p>{item.description}</p>
+            </article>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };

@@ -1,78 +1,65 @@
-import { useEffect, useRef } from "react";
+const projects = [
+  {
+    name: "CodeX: Multiplayer Coding Battle Platform",
+    description:
+      "Real-time 1v1 algorithmic battle platform with sub-100ms matchmaking, WebSocket-based code sync, and real-time match-state updates.",
+    stack: "React, Node.js, WebSocket, Redis, MongoDB",
+  },
+  {
+    name: "BuildItAI - AI Website Generator",
+    description:
+      "Lovable-inspired platform that generates complete websites from natural language prompts using Planner, Builder, and Debugger agents.",
+    stack: "TypeScript, React, Tailwind CSS, Node.js, MongoDB",
+  },
+  {
+    name: "A Thug's Ascension - Indie Video Game",
+    description:
+      "Worked as a 3D and animation artist from 2019 to release, with the game launched on Steam on January 18, 2024.",
+    stack: "3D Art, Animation, Production",
+    links: [
+      { label: "Website", href: "https://www.moonwalkgames.net/ata" },
+      {
+        label: "Steam",
+        href: "https://store.steampowered.com/app/2391950/A_Thugs_Ascension/",
+      },
+    ],
+  },
+];
 
 export const Projects = () => {
-  const boxRef = useRef();
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      const box = boxRef.current;
-      const hoveredContainer = e.target.closest(".project-list");
-
-      if (box && hoveredContainer) {
-        box.style.display = "block";
-        box.style.top = `${e.clientY + 10}px`;
-        box.style.left = `${e.clientX + 10}px`;
-      } else if (box) {
-        box.style.display = "none";
-      }
-    };
-
-    document.addEventListener("mousemove", handleMouseMove);
-    return () => document.removeEventListener("mousemove", handleMouseMove);
-  }, []);
   return (
-    <>
-      <div
-        ref={boxRef}
-        style={{
-          position: "fixed",
-          display: "none",
-          backgroundColor: "#222",
-          backgroundImage: "linear-gradient(45deg, #333, #222)",
-          color: "white",
-          padding: "8px 12px",
-          borderRadius: "6px",
-          pointerEvents: "none",
-          zIndex: 9999,
-        }}
-      >
-        Hello 👋
+    <section id="projects" className="projects">
+      <h2 className="projects-title">Projects</h2>
+      <div className="projects-content">
+        <ul className="project-list">
+          {projects.map((project) => (
+            <li key={project.name}>
+              <div className="project-details">
+                <h3 className="project-names">{project.name}</h3>
+                <p>{project.description}</p>
+                <p className="project-stack">
+                  <strong>Stack:</strong> {project.stack}
+                </p>
+              </div>
+              {project.links ? (
+                <div className="button-container">
+                  {project.links.map((link) => (
+                    <button
+                      key={link.href}
+                      className="project-button"
+                      onClick={() =>
+                        window.open(link.href, "_blank", "noopener,noreferrer")
+                      }
+                    >
+                      {link.label}
+                    </button>
+                  ))}
+                </div>
+              ) : null}
+            </li>
+          ))}
+        </ul>
       </div>
-
-      <div className="projects">
-        <div className="projects-title">Projects</div>
-        <div className="projects-content">
-          I have made begineer to intermediate projects but more advance projects are coming on its way.
-          <ul className="project-list">
-            <li>
-              <div className="project-names">
-                A Thug's Ascension - Indie Video Game{" "}
-              </div>
-              <div className="button-container">
-                <button className="project-button" onClick={() => window.open("https://www.moonwalkgames.net/ata")}>View Site</button>
-                <button className="project-button" onClick={() => window.open("https://store.steampowered.com/app/2391950/A_Thugs_Ascension/")}>Steam</button>
-              </div>
-            </li>
-            <li>
-              <div className="project-names">
-                Tic Tac Toe - Human Vs AI{" "}
-              </div>
-              <div className="button-container">
-                <button className="project-button" onClick={() => window.open("https://github.com/Commanderk3/tic-tac-toe-pwa")}>View Site</button>
-                <button className="project-button" onClick={() => window.open("https://github.com/Commanderk3/tic-tac-toe-pwa")}>GitHub</button>
-              </div>
-            </li>
-            <li>
-              <div className="project-names">
-                Traffic Management System{" "}
-              </div>
-              <div className="button-container">
-                <button className="project-button" onClick={() => window.open("https://github.com/Commanderk3/dbms")}>View Site</button>
-                <button className="project-button" onClick={() => window.open("https://github.com/Commanderk3/dbms")}>GitHub</button>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </>
+    </section>
   );
 };
