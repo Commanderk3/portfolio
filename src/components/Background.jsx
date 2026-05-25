@@ -24,7 +24,17 @@ export const Background = () => {
           <h1 className="bloom-text">DIWANGSHU KAKOTY DIWANGSHU KAKOTY</h1>
         </div>
       </div>
-      <div className="container" />
+      <div className="container">
+        <img
+          className="container-image"
+          src="/images/persis.png"
+          alt=""
+          loading="lazy"
+          decoding="async"
+          fetchPriority="low"
+          aria-hidden="true"
+        />
+      </div>
     </div>
   );
 };
