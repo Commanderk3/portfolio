@@ -10,6 +10,24 @@ export const Education = () => {
           <span>CGPA: 9.16</span>
         </div>
       </article>
+      <article className="education-card">
+        <h3>Class 12</h3>
+        <p>Delhi Public School, Nazira</p>
+        <div className="education-meta">
+          <span>Board: C.B.S.E.</span>
+          <span>Score: 88.8%</span>
+          <span>Year: 2022</span>
+        </div>
+      </article>
+      <article className="education-card">
+        <h3>Class 10</h3>
+        <p>Delhi Public School, Nazira</p>
+        <div className="education-meta">
+          <span>Board: C.B.S.E.</span>
+          <span>Score: 94.4%</span>
+          <span>Year: 2020</span>
+        </div>
+      </article>
     </section>
   );
 };

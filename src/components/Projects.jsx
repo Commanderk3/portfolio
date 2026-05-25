@@ -24,6 +24,18 @@ const projects = [
       },
     ],
   },
+  {
+    name: "Url shortner",
+    description:
+      "Built a production-style URL shortener on AWS by orchestrating Docker, Kubernetes (K3s), Terraform, and GitHub Actions, implementing a fully automated CI/CD pipeline with self-healing multi-replica deployments, Redis-backed persistence, infrastructure-as-code provisioning, and zero-touch cloud deployment from git push to live service.",
+    stack: "AWS, Docker, Kubernetes (K3s), Terraform, GitHub Actions, Redis",
+    links: [
+      {
+        label: "Repository",
+        href: "https://github.com/Commanderk3/url_shortner",
+      },
+    ],
+  },
 ];
 
 export const Projects = () => {
