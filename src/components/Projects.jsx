@@ -4,12 +4,36 @@ const projects = [
     description:
       "Real-time 1v1 algorithmic battle platform with sub-100ms matchmaking, WebSocket-based code sync, and real-time match-state updates.",
     stack: "React, Node.js, WebSocket, Redis, MongoDB",
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/Commanderk3/CodeX",
+      },
+    ],
   },
   {
     name: "BuildItAI - AI Website Generator",
     description:
       "Lovable-inspired platform that generates complete websites from natural language prompts using Planner, Builder, and Debugger agents.",
     stack: "TypeScript, React, Tailwind CSS, Node.js, MongoDB",
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/Commanderk3/BuildIt",
+      },
+    ],
+  },
+  {
+    name: "Url Shortner",
+    description:
+      "Built a production-style URL shortener on AWS by orchestrating Docker, Kubernetes (K3s), Terraform, and GitHub Actions, implementing a fully automated CI/CD pipeline with self-healing multi-replica deployments, Redis-backed persistence, infrastructure-as-code provisioning, and zero-touch cloud deployment from git push to live service.",
+    stack: "AWS, Docker, Kubernetes (K3s), Terraform, GitHub Actions, Redis",
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/Commanderk3/url_shortner",
+      },
+    ],
   },
   {
     name: "A Thug's Ascension - Indie Video Game",
@@ -21,18 +45,6 @@ const projects = [
       {
         label: "Steam",
         href: "https://store.steampowered.com/app/2391950/A_Thugs_Ascension/",
-      },
-    ],
-  },
-  {
-    name: "Url shortner",
-    description:
-      "Built a production-style URL shortener on AWS by orchestrating Docker, Kubernetes (K3s), Terraform, and GitHub Actions, implementing a fully automated CI/CD pipeline with self-healing multi-replica deployments, Redis-backed persistence, infrastructure-as-code provisioning, and zero-touch cloud deployment from git push to live service.",
-    stack: "AWS, Docker, Kubernetes (K3s), Terraform, GitHub Actions, Redis",
-    links: [
-      {
-        label: "Repository",
-        href: "https://github.com/Commanderk3/url_shortner",
       },
     ],
   },
